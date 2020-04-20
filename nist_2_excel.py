@@ -35,8 +35,10 @@ class report():
             strlist = lines[7 + i].split(r' ')
             while '' in strlist:
                 strlist.remove('')
-            #print(strlist)
-            p_value = strlist[-3]
+            if "*" in strlist:
+                p_value = strlist[-4]
+            else:
+                p_value = strlist[-3]
             if "." not in p_value:
                 p_value = "bad"
             self.write_to_excel(sheet_num, i + 1, self.col_cur, p_value)
