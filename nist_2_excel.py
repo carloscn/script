@@ -5,6 +5,7 @@ import xlrd
 import xlrd
 import xlwt
 from xlutils.copy import copy
+from xlwt import Workbook
 
 class report():
     excel_name = "/home/carlos/Desktop/time.xls"
@@ -77,6 +78,10 @@ class report():
 
 if __name__ == '__main__':
     t = report();
+    book = Workbook(encoding='utf-8')
+    sheet1 = book.add_sheet('Sheet 1')
+    # 保存Excel book.save('path/文件名称.xls')
+    book.save(t.excel_name)
     t.run()
 
 
