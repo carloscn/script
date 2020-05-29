@@ -20,26 +20,26 @@ num_hmac_sha256 = 8
 num_hmac_sha384 = 9
 num_hmac_sha512 = 10
 
-y_norand_nist_s_rate = np.array([0.87,0.94,0.93,0.95,0.93,0.92,0.95,0.92,0.9,0.92,0.92])
+y_norand_nist_s_rate = np.array([0.8526, 0.9207, 0.9021, 0.9504, 0.8811, 0.9306, 0.9312, 0.9108, 0.873, 0.8928, 0.8827])
 y_ave_norand_nist_s_rate = np.average(y_norand_nist_s_rate)
 y_ave_norand_nist_s_rate_ctr = np.average(y_norand_nist_s_rate[0:1])
 y_ave_norand_nist_s_rate_hash = np.average(y_norand_nist_s_rate[1:6])
 y_ave_norand_nist_s_rate_hmac = np.average(y_norand_nist_s_rate[6:11])
 
-y_trng_nist_s_rate = np.array([0.96,0.89,0.9,0.92,0.94,0.89,0.95,0.91,0.86,0.88,0.88])
+y_trng_nist_s_rate = np.array([0.94, 0.8712, 0.8722, 0.98, 0.9215, 0.8722, 0.9603, 0.8613, 0.873, 0.9114, 0.8722])
 y_ave_trng_nist_s_rate = np.average(y_trng_nist_s_rate)
 y_ave_trng_nist_s_rate_ctr = np.average(y_trng_nist_s_rate[0:1])
 y_ave_trng_nist_s_rate_hash = np.average(y_trng_nist_s_rate[1:6])
 y_ave_trng_nist_s_rate_hmac = np.average(y_trng_nist_s_rate[6:11])
 
 
-y_drbg_nist_s_rate = np.array([0.92,0.92,0.96,0.92,0.93,0.95,0.92,0.93,0.93,0.9,0.96])
+y_drbg_nist_s_rate = np.array([0.8736, 0.9108, 0.8624, 0.9212, 0.9306, 0.93, 0.8827, 0.8624, 0.8827, 0.8924, 0.95])
 y_ave_drbg_nist_s_rate = np.average(y_drbg_nist_s_rate)
 y_ave_drbg_nist_s_rate_ctr = np.average(y_drbg_nist_s_rate[0:1])
 y_ave_drbg_nist_s_rate_hash = np.average(y_drbg_nist_s_rate[1:6])
 y_ave_drbg_nist_s_rate_hmac = np.average(y_drbg_nist_s_rate[6:11])
 
-y_norand10_nist_s_rate = np.array( [0.9,0.93,0.88,0.91,0.89,0.91,0.9,0.91,0.91,0.92,0.91])
+y_norand10_nist_s_rate = np.array( [0.8736, 0.8928, 0.8918, 0.9118, 0.8613, 0.9021, 0.8316, 0.8624, 0.8811, 0.873, 0.8712])
 
 y_ave_norand10_nist_s_rate = np.average(y_norand10_nist_s_rate)
 y_ave_norand10_nist_s_rate_ctr = np.average(y_norand10_nist_s_rate[0:1])
@@ -52,7 +52,7 @@ y_ave_norand100_nist_s_rate_ctr = np.average(y_norand100_nist_s_rate[0:1])
 y_ave_norand100_nist_s_rate_hash = np.average(y_norand100_nist_s_rate[1:6])
 y_ave_norand100_nist_s_rate_hmac = np.average(y_norand100_nist_s_rate[6:11])
 
-y_trng10_nist_s_rate = np.array([0.88,0.95,0.91,0.9,0.91,0.96,0.9,0.93,0.95,0.93,0.95])
+y_trng10_nist_s_rate = np.array([0.8633, 0.931, 0.9108, 0.8827, 0.9408, 0.931, 0.9016, 0.9207, 0.92, 0.95, 0.91])
 
 y_ave_trng10_nist_s_rate = np.average(y_trng10_nist_s_rate)
 y_ave_trng10_nist_s_rate_ctr = np.average(y_trng10_nist_s_rate[0:1])
@@ -60,19 +60,19 @@ y_ave_trng10_nist_s_rate_hash = np.average(y_trng10_nist_s_rate[1:6])
 y_ave_trng10_nist_s_rate_hmac = np.average(y_trng10_nist_s_rate[6:11])
 
 
-y_trng100_nist_s_rate = np.array([0.95,0.9,0.9,0.91,0.96,0.91,0.9,0.95,0.92,0.94,0.93])
+y_trng100_nist_s_rate = np.array([0.91, 0.8712, 0.8712, 0.91, 0.931, 0.8536, 0.8918, 0.9114, 0.8736, 0.94, 0.9207])
 y_ave_trng100_nist_s_rate = np.average(y_trng100_nist_s_rate)
 y_ave_trng100_nist_s_rate_ctr = np.average(y_trng100_nist_s_rate[0:1])
 y_ave_trng100_nist_s_rate_hash = np.average(y_trng100_nist_s_rate[1:6])
 y_ave_trng100_nist_s_rate_hmac = np.average(y_trng100_nist_s_rate[6:11])
 
-y_drbg10_nist_s_rate = np.array([0.91,0.9,0.95,0.93,0.94,0.94,0.9,0.93,0.91,0.95,0.93])
+y_drbg10_nist_s_rate = np.array([0.9, 0.9016, 0.92, 0.91, 0.9801, 0.8924, 0.8811, 0.9016, 0.9021, 0.9504, 0.9215])
 y_ave_drbg10_nist_s_rate = np.average(y_drbg10_nist_s_rate)
 y_ave_drbg10_nist_s_rate_ctr = np.average(y_drbg10_nist_s_rate[0:1])
 y_ave_drbg10_nist_s_rate_hash = np.average(y_drbg10_nist_s_rate[1:6])
 y_ave_drbg10_nist_s_rate_hmac = np.average(y_drbg10_nist_s_rate[6:11])
 
-y_drbg100_nist_s_rate = np.array([0.94,0.92,0.91,0.92,0.96,0.95,0.93,0.94,0.95,0.92,0.94])
+y_drbg100_nist_s_rate = np.array([0.9009, 0.9016, 0.9021, 0.92, 0.9409, 0.8624, 0.95, 0.95, 0.9016, 0.9312, 0.94])
 y_ave_drbg100_nist_s_rate = np.average(y_drbg100_nist_s_rate)
 y_ave_drbg100_nist_s_rate_ctr = np.average(y_drbg100_nist_s_rate[0:1])
 y_ave_drbg100_nist_s_rate_hash = np.average(y_drbg100_nist_s_rate[1:6])
@@ -139,7 +139,7 @@ def show_all_nist_rate():
     plt.hlines(ave_c, -1, 11, 'b', linestyles='dashed')
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
-    plt.axis([-1, 9, 0.9, 0.95])
+    plt.axis([-1, 9, 0.85, 0.95])
     plt.title("Reseed para impact")
     plt.grid()
     plt.legend()  # 设置题注
@@ -173,7 +173,7 @@ def show_all_nist_rate():
     plt.hlines(ave_c, -1, 11, 'b', linestyles='dashed')
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
-    plt.axis([-1, 9, 0.9, 0.95])
+    plt.axis([-1, 9, 0.85, 0.95])
     plt.title("Reseed para impact")
     plt.grid()
     plt.legend()  # 设置题注
@@ -212,7 +212,7 @@ def show_norand1m_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(No Random Number as Seed*1MB)")
+    plt.title("NIST Pass Rate of DRBG(No Random Number as Seed*1MB)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -251,7 +251,7 @@ def show_trng1m_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(TRNG as Seed * 1MB)")
+    plt.title("NIST Pass Rate of DRBG(TRNG as Seed * 1MB)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -303,7 +303,7 @@ def show_sum1m_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(SUM * 10KB)")
+    plt.title("NIST Pass Rate of DRBG(SUM * 10KB)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -341,7 +341,7 @@ def show_drbg1m_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.875, 1.0])
-    plt.title("SM Pass Rate of DRBG(DRBG as Seed * 1MB)")
+    plt.title("NIST Pass Rate of DRBG(DRBG as Seed * 1MB)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -381,7 +381,7 @@ def show_norand10_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(No Random Number as Seed*10KB)")
+    plt.title("NIST Pass Rate of DRBG(No Random Number as Seed*10KB)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -420,7 +420,7 @@ def show_trng10_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(TRNG as Seed * 10K)")
+    plt.title("NIST Pass Rate of DRBG(TRNG as Seed * 10K)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -478,7 +478,7 @@ def show_sum10_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(Reseed * 10K)")
+    plt.title("NIST Pass Rate of DRBG(Reseed * 10K)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -515,7 +515,7 @@ def show_drbg10_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(DRBG as Seed * 10K)")
+    plt.title("NIST Pass Rate of DRBG(DRBG as Seed * 10K)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -552,7 +552,7 @@ def show_norand100_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(No Random Number as Seed * 100K)")
+    plt.title("NIST Pass Rate of DRBG(No Random Number as Seed * 100K)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -591,7 +591,7 @@ def show_trng100_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(TRNG as Seed * 100K)")
+    plt.title("NIST Pass Rate of DRBG(TRNG as Seed * 100K)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -629,7 +629,7 @@ def show_drbg100_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.8, 1.0])
-    plt.title("SM Pass Rate of DRBG(DRBG as Seed * 100K)")
+    plt.title("NIST Pass Rate of DRBG(DRBG as Seed * 100K)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -682,7 +682,7 @@ def show_sum100_nist_pass_rate():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 11, 0.875, 1.0])
-    plt.title("SM Pass Rate of DRBG(SUM * 1MB)")
+    plt.title("NIST Pass Rate of DRBG(SUM * 1MB)")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -745,7 +745,7 @@ def show_alg_subs_nist_compare():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 3, 0.85, 0.94])
-    plt.title("SM All Pass Rate")
+    plt.title("NIST All Pass Rate")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -793,8 +793,8 @@ def show_alg_hash_sub_nist_compare():
 
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
-    plt.axis([-1, 5, 0.9, 0.94])
-    plt.title("HASH SM Pass Rate")
+    plt.axis([-1, 5, 0.86, 0.94])
+    plt.title("HASH NIST Pass Rate")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -835,8 +835,8 @@ def show_alg_hmac_sub_nist_compare():
 
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
-    plt.axis([-1, 5, 0.9, 0.94])
-    plt.title("HMAC SM Pass Rate")
+    plt.axis([-1, 5, 0.86, 0.94])
+    plt.title("HMAC NIST Pass Rate")
     plt.legend()  # 设置题注
 
     for rect in rects_ctr:
@@ -847,6 +847,7 @@ def show_alg_hmac_sub_nist_compare():
 
 
 def show_seeds_sum_nist_compare():
+    
     re1m = (np.sum(y_drbg_nist_s_rate) + np.sum(y_norand_nist_s_rate) + np.sum(y_trng_nist_s_rate)) / 33
     re10k = (np.sum(y_drbg10_nist_s_rate) + np.sum(y_norand10_nist_s_rate) + np.sum(y_trng10_nist_s_rate)) / 33
     re100k = (np.sum(y_drbg100_nist_s_rate) + np.sum(y_norand100_nist_s_rate) + np.sum(y_trng100_nist_s_rate)) / 33
@@ -857,7 +858,7 @@ def show_seeds_sum_nist_compare():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 3, 0.5, 1])
-    plt.title("Seeds SM Pass Rate")
+    plt.title("Seeds NIST Pass Rate")
     plt.legend()  # 设置题注
     plt.grid()
     for rect in rects_ctr:
@@ -877,7 +878,7 @@ def show_seed_10k_sum_nist_compare():
     plt.xlabel("DRBG-Subs")
     plt.ylabel("Pass Rate")
     plt.axis([-1, 3, 0.5, 1])
-    plt.title("Reseed 10K SM Pass Rate")
+    plt.title("Reseed 10K NIST Pass Rate")
     plt.legend()  # 设置题注
     plt.grid()
     for rect in rects_ctr:
@@ -885,8 +886,6 @@ def show_seed_10k_sum_nist_compare():
         plt.text(rect.get_x() + rect.get_width() / 2, height, str(height), ha="center", va="bottom")
 
     plt.show()
-
-
 if __name__ == "__main__":
     # show_all_nist_rate()
     # show_norand1m_nist_pass_rate()
@@ -900,16 +899,15 @@ if __name__ == "__main__":
     # show_drbg100_nist_pass_rate()
     # show_sum100_nist_pass_rate()
 
-
+    #show_seed_10k_sum_nist_compare()
     #show_norand10_nist_pass_rate()
     #show_trng10_nist_pass_rate()
     #show_drbg10_nist_pass_rate()
     # show_sum10_nist_pass_rate()
-
+    #show_seed_10k_sum_nist_compare()
     #show_alg_hash_sub_nist_compare()
     #show_alg_hmac_sub_nist_compare()
     #
-    #show_seed_10k_sum_nist_compare()
-     #show_alg_subs_nist_compare()
+    # show_alg_subs_nist_compare()
     #
-     show_all_nist_rate()
+    show_all_nist_rate()
