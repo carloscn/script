@@ -1,0 +1,48 @@
+this tool can remove the sha3 digest padding pkcsv1.5:
+------------------------------------------------------------------------------------------------------
+    /*  SHA2 PKCS#1v1.5 Padding
+        LSB------------------------------------------------------MSB
+        0x0 || 0x1 || 0xFF(for 202 bytes) || 0x0 || tPad || SHA Hash
+
+        SHA3 PKCS#1v1.5 Padding
+        LSB------------------------------------------------------MSB
+        0x0 || 0x1 || 0xFF(for 384 bytes) || 0x0 || tPad || SHA Hash
+    */
+
+    uint8_t tPadSha2[T_PAD_LENGTH] = { 0x30, 0x31, 0x30, 0x0D, 0x06, 0x09, 0x60, 0x86, 0x48, 0x01,
+                                       0x65, 0x03, 0x04, 0x02, 0x01, 0x05, 0x00, 0x04, 0x20 };
+
+    /* New SHA3 ID as per NIST */
+    uint8_t tPadSha3new[T_PAD_LENGTH] = { 0x30, 0x41, 0x30, 0x0D, 0x06, 0x09, 0x60, 0x86, 0x48, 0x01,
+                                          0x65, 0x03, 0x04, 0x02, 0x09, 0x05, 0x00, 0x04, 0x30 };
+
+    /* Older SHA3 ID used before 2016.1 */
+    uint8_t tPadSha3[T_PAD_LENGTH] = { 0x30, 0x41, 0x30, 0x0D, 0x06, 0x09, 0x60, 0x86, 0x48, 0x01,
+                                       0x65, 0x03, 0x04, 0x02, 0x02, 0x05, 0x00, 0x04, 0x30 };
+The input is :
+------------------------------------------------------------------------------------------------------
+$ hd digest.bin 
+00000000  00 01 ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+00000010  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+000001b0  ff ff ff ff ff ff ff ff  ff ff ff ff 00 30 41 30  |.............0A0|
+000001c0  0d 06 09 60 86 48 01 65  03 04 02 09 05 00 04 30  |...`.H.e.......0|
+000001d0  f7 80 8c f0 64 61 44 21  41 2a 6c 3f 91 9d 0d 03  |....daD!A*l?....|
+000001e0  3f ee f3 c7 72 52 d4 a7  89 68 b8 d6 5f d0 24 3a  |?...rR...h.._.$:|
+000001f0  65 a9 6d 7a 35 7e a1 b2  72 da ee 58 2f b9 72 9d  |e.mz5~..r..X/.r.|
+00000200
+
+The output is :
+----------------------------------------------------------------------------------------------------
+$ hd digest_nopad.bin 
+00000000  f7 80 8c f0 64 61 44 21  41 2a 6c 3f 91 9d 0d 03  |....daD!A*l?....|
+00000010  3f ee f3 c7 72 52 d4 a7  89 68 b8 d6 5f d0 24 3a  |?...rR...h.._.$:|
+00000020  65 a9 6d 7a 35 7e a1 b2  72 da ee 58 2f b9 72 9d  |e.mz5~..r..X/.r.|
+00000030
+---------------------------------------------------------------------------------------------------
+
+usage:
+
+gcc strip_padding.c -o strip_padding
+
+./strip_padding ./digest.bin ./digest_nopad.bin
