@@ -11,11 +11,11 @@ int main(int argc, char* argv[]) {
   size_t i = 0;
   ssize_t sz = 0;
 
-  printf("This is the strip the NIST SHA3 rsa padding tools\n\n");
+  printf("[INFO] This is the strip the NIST SHA3 rsa padding tools\n\n");
 
   if (argc < 3 || argv[1] == NULL || argv[2] == NULL) {
     printf(
-        "error input, example: $ strip_padding ./digest.bin "
+        "[ERR] error input, example: $ strip_padding ./digest.bin "
         "./digest_nopad.bin\n");
     return -1;
   }
@@ -26,13 +26,13 @@ int main(int argc, char* argv[]) {
   char dig[48] = {0};
 
   if (!in || !out) {
-    perror("open file failed");
+    perror("[ERR] open file failed");
     return -1;
   }
 
   fseek(in, 464, SEEK_CUR);
   sz = fread(dig, 8, 6, in);
-  printf("read sz = %ld : \nwrite file data: \n", sz);
+  printf("[INFO] read sz = %ld : \nwrite file data: \n", sz);
   for (i = 0; i < 48; i++) {
     if (i % 8 == 0) {
       printf("\n");
@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
 
   fclose(in);
   sz = fwrite(dig, 8, 6, out);
-  printf("write block count is %ld\n", sz);
+  printf("[INFO] write block count is %ld\n", sz);
   fclose(out);
   return 0;
 }
