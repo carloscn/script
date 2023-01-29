@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://review.spdk.io/gerrit/plugins/gitiles/spdk/spdk/+/refs/heads/master/scripts/arm_cross_compile.sh
+
 ROOT_DIR=$(readlink -f $(dirname $0))/..
 CROSS_REMOTE_ADDR="https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu.tar.xz"
 CROSS_NAME="gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu"
