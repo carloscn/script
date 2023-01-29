@@ -109,7 +109,7 @@ else
 fi
 
 echo "[INFO] Execute dd if=./part.img of=${sd} bs=4K status=progress"
-dd if=part.img of=${sd} bs=4K status=progress
+#dd if=part.img of=${sd} bs=4K status=progress
 if [ $? -eq 0 ]; then
     echo "[INFO] dd if=part.img of=${sd} bs=4K status=progress done!"
 else
