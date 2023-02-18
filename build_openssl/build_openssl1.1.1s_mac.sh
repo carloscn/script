@@ -21,7 +21,7 @@ tar -zxvf ${target_ball}
 cd ${target_path}
 __utils_check_ret $? "tar -zxvf failed!"
 
-./Configure linux-x86_64 no-asm --prefix=`pwd`/out
+./Configure darwin64-x86_64-cc no-asm --prefix=`pwd`/out
 __utils_check_ret $? "config failed!"
 
 make `nproc`

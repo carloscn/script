@@ -1,5 +1,8 @@
 #!/bin/bash
 
+CROSS_COMPILE=arm-linux-gnueabihf-gcc
+HOST=arm-linux-gnueabihf-
+
 function __utils_check_ret() {
     if [ $1 -eq 0 ]; then
         echo "[INFO] $2 done!"
@@ -9,11 +12,11 @@ function __utils_check_ret() {
     fi
 }
 
-target_ball=openssl-1.1.1s.tar.gz
-target_path=openssl-1.1.1s
+target_ball=openssl-1.0.2s.tar.gz
+target_path=openssl-1.0.2s
 
 if [ ! -f ${target_ball} ];then
-    aria2c -x5 "https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1s/openssl-1.1.1s.tar.gz"
+    aria2c -x5 "https://ftp.openssl.org/source/old/1.0.2/openssl-1.0.2s.tar.gz"
     __utils_check_ret $? "download failed!"
 fi
 
@@ -21,10 +24,10 @@ tar -zxvf ${target_ball}
 cd ${target_path}
 __utils_check_ret $? "tar -zxvf failed!"
 
-./Configure linux-x86_64 no-asm --prefix=`pwd`/out
-__utils_check_ret $? "config failed!"
+./Configure linux-armv4 no-asm shared --cross-compile-prefix=${HOST}  --prefix=`pwd`/out
 
-make `nproc`
+make -j`nproc`
+__utils_check_ret $? "make failed!"
 
 make install
 

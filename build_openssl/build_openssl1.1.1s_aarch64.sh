@@ -1,5 +1,8 @@
 #!/bin/bash
 
+CROSS_COMPILE=aarch64-linux-gnu-gcc
+HOST=aarch64-linux-gnu-
+
 function __utils_check_ret() {
     if [ $1 -eq 0 ]; then
         echo "[INFO] $2 done!"
@@ -21,10 +24,10 @@ tar -zxvf ${target_ball}
 cd ${target_path}
 __utils_check_ret $? "tar -zxvf failed!"
 
-./Configure linux-x86_64 no-asm --prefix=`pwd`/out
-__utils_check_ret $? "config failed!"
+./Configure linux-aarch64 no-asm shared --cross-compile-prefix=${HOST}  --prefix=`pwd`/out
 
-make `nproc`
+make -j`nproc`
+__utils_check_ret $? "make failed!"
 
 make install
 

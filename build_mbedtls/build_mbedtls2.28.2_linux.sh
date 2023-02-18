@@ -9,11 +9,11 @@ function __utils_check_ret() {
     fi
 }
 
-target_ball=openssl-1.1.1s.tar.gz
-target_path=openssl-1.1.1s
+target_ball=mbedtls-2.28.2.tar.gz
+target_path=mbedtls-2.28.2
 
 if [ ! -f ${target_ball} ];then
-    aria2c -x5 "https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1s/openssl-1.1.1s.tar.gz"
+    aria2c -x5 "https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v2.28.2.tar.gz" -o ${target_ball}
     __utils_check_ret $? "download failed!"
 fi
 
@@ -21,11 +21,11 @@ tar -zxvf ${target_ball}
 cd ${target_path}
 __utils_check_ret $? "tar -zxvf failed!"
 
-./Configure linux-x86_64 no-asm --prefix=`pwd`/out
-__utils_check_ret $? "config failed!"
+cmake .
+cmake -DUSE_SHARED_MBEDTLS_LIBRARY=On \
+      -DCMAKE_INSTALL_PREFIX="./out" .
 
-make `nproc`
+make -j`nproc`
 
+echo "if you want to makeinstall in your /usr/local/ path, input the root password!"
 make install
-
-ls ./out
