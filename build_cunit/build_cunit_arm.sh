@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CROSS_COMPILE=arm-linux-gnueabihf
+CROSS_COMPILE=arm-linux-gnueabihf-gcc
 HOST=arm-linux-gnueabihf
 
 function __utils_check_ret() {
@@ -28,6 +28,7 @@ cd ${target_path}
 
 aclocal
 autoconf
+autoreconf -i
 automake
 automake --add-missing
 
@@ -37,4 +38,4 @@ make -j8
 
 make install
 
-tree -L2 ./out
+tree ./out

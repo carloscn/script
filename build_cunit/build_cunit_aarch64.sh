@@ -1,5 +1,8 @@
 #!/bin/bash
 
+CROSS_COMPILE=aarch64-linux-gnu-gcc
+HOST=aarch64-linux-gnu
+
 function __utils_check_ret() {
 
     if [ $1 -eq 0 ]; then
@@ -27,12 +30,12 @@ aclocal
 autoconf
 autoreconf -i
 automake
+automake --add-missing
 
-./configure --prefix=`pwd`/out
+CC=${CROSS_COMPILE} ./configure --prefix=`pwd`/out --host=${HOST}
 
 make -j8
 
 make install
 
-sudo cp -r ./out/include/* /usr/local/include/
-sudo cp -r ./out/lib/{*.so*,*.a} /usr/local/lib/
+tree ./out
