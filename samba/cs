@@ -1,0 +1,4 @@
+# !/bin/bash
+
+cp -rf $1 /home/haochenwei/samba/ 
+echo "cp -rf $1 /home/haochenwei/samba/"

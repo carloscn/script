@@ -25,7 +25,7 @@ cd ${target_path}
 
 aclocal
 autoconf
-autoreconf -i
+#autoreconf -i
 automake
 
 ./configure --prefix=`pwd`/out
