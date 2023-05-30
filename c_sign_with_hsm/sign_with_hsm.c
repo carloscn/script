@@ -215,17 +215,6 @@ int32_t sign_with_hsm(const char *file_to_sign,
         LOG_INFO("%s", output[i]);
     }
 
-    sprintf(cmd, "hd %s", signature_name);
-    ret = run_external_command(cmd, output, &line_count);
-    if (ret != 0) {
-        LOG_INFO("Call run cmd failed.\n cmd: %s\n", cmd);
-        goto finish;
-    }
-
-    for (size_t i = 0; i < line_count; ++ i) {
-        LOG_INFO("%s", output[i]);
-    }
-
 finish:
     return ret;
 }
