@@ -1,0 +1,9 @@
+[Unit]
+Description=Lazy Monster Service
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/lazy_monster.sh
+
+[Install]
+WantedBy=multi-user.target
