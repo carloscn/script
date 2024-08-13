@@ -41,7 +41,7 @@ function utils_check_ret()
     fi
 }
 
-CROSS_AARCH64_ADDR="https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/binrel/gcc-arm-11.2-2022.02-x86_64-aarch64-none-linux-gnu.tar.xz"
+CROSS_AARCH64_ADDR="https://mirrors.tuna.tsinghua.edu.cn/armbian-releases/_toolchain/gcc-arm-11.2-2022.02-x86_64-aarch64-none-linux-gnu.tar.xz"
 
 utils_wget_download ${CROSS_AARCH64_ADDR} || utils_check_ret $? "wget the ARCH64 cross compiler toolchains"
 

@@ -41,7 +41,8 @@ function utils_check_ret()
     fi
 }
 
-CROSS_AARCH32_ADDR="https://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/arm-linux-gnueabihf/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz"
+#CROSS_AARCH32_ADDR="https://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/arm-linux-gnueabihf/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz"
+CROSS_AARCH32_ADDR="https://mirrors.tuna.tsinghua.edu.cn/armbian-releases/_toolchain/gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf.tar.xz"
 
 utils_wget_download ${CROSS_AARCH32_ADDR} || utils_check_ret $? "wget the ARCH32 cross compiler toolchains"
 

@@ -41,7 +41,8 @@ function utils_check_ret()
     fi
 }
 
-CROSS_AEBI_ADDR="https://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/arm-eabi/gcc-linaro-7.5.0-2019.12-x86_64_arm-eabi.tar.xz"
+#CROSS_AEBI_ADDR="https://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/arm-eabi/gcc-linaro-7.5.0-2019.12-x86_64_arm-eabi.tar.xz"
+CROSS_AEBI_ADDR="https://mirrors.tuna.tsinghua.edu.cn/armbian-releases/_toolchain/gcc-linaro-7.4.1-2019.02-x86_64_arm-eabi.tar.xz"
 
 utils_wget_download ${CROSS_AEBI_ADDR} || utils_check_ret $? "wget the ARM cross compiler toolchains"
 
