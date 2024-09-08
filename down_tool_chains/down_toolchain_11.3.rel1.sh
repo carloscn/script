@@ -41,8 +41,8 @@ function utils_check_ret()
     fi
 }
 
-CROSS_AARCH32_ADDR="https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-linux-gnueabihf.tar.xz"
-CROSS_AARCH64_ADDR="https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz"
+CROSS_AARCH32_ADDR="https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-linux-gnueabihf.tar.xz"
+CROSS_AARCH64_ADDR="https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz"
 
 utils_wget_download ${CROSS_AARCH64_ADDR} || utils_check_ret $? "wget the ARCH64 cross compiler toolchains"
 utils_wget_download ${CROSS_AARCH32_ADDR} || utils_check_ret $? "wget the ARCH32 cross compiler toolchains"
